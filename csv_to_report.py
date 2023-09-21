@@ -15,8 +15,8 @@ def process_data(employee_list):
 
 def write_report(dictionary, report_file):
     with open(report_file, "w+") as f:
-        f.writelines(f"{k}:{v}\n" for k, v in sorted(dictionary.items()))
-    print(dictionary)
+        for k in sorted(dictionary):
+            f.write(str(k) + ':' + str(dictionary[k]) + '\n') # (f"{k}:{v}\n" for k, v in sorted(dictionary.items()))
 
 if __name__ == "__main__":
     csv_file_location = "/home/student-03-5ef644d4b08f/data/employees.csv"
